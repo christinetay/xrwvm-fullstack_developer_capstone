@@ -41,7 +41,7 @@ def login_user(request):
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
     logout(request)
-    data = {"username": ""}
+    data = {"userName": ""}
     return JsonResponse(data)
 
 # Create a `registration` view to handle sign up request
@@ -66,14 +66,14 @@ def registration(request):
         logger.debug(username + " is a new user")
     
     if user_exist:
-        data = {"username": username, "error":"Already Registered"}
+        data = {"userName": username, "error":"Already Registered"}
         return JsonResponse(data)
     else:
         # Create user in auth_user table
         user = User.objects.create_user(username=username, first_name=first_name, last_name=last_name,password=password, email=email)
         # Login the user and redirect to list page
         login(request, user)
-        data = {"username": username, "status": "Authenticated"}
+        data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
 
 # # Update the `get_dealerships` view to render the index page with
