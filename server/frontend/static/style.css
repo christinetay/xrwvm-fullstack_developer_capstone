@@ -124,3 +124,16 @@ img{
     text-align:center;
     box-shadow: 2px 2px 3px #999;  
 }
+
+.person-img{
+    height: 250px;
+}
+
+.vl {
+    border-left: 6px solid black;
+}
+
+.contact-us-border{
+    border: none !important;
+
+}
