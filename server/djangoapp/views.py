@@ -42,6 +42,7 @@ def login_user(request):
 
 # Create a `logout_request` view to handle sign out request
 def logout_request(request):
+    print("logout_request start...");
     logout(request)
     data = {"userName": ""}
     return JsonResponse(data)
@@ -78,10 +79,10 @@ def registration(request):
         data = {"userName": username, "status": "Authenticated"}
         return JsonResponse(data)
 
-# # Update the `get_dealerships` view to render the index page with
-# a list of dealerships
-#Update the `get_dealerships` render list of dealerships all by default, particular state if state is passed
+# Update the `get_dealerships` view to render the index page with
+@csrf_exempt
 def get_dealerships(request, state="All"):
+    print("********** get_dealership start...");
     if(state == "All"):
         endpoint = "/fetchDealers"
     else:
@@ -94,11 +95,13 @@ def get_dealer_reviews(request, dealer_id):
     if(dealer_id):
         endpoint = "/fetchReviews/dealer/"+str(dealer_id)
         reviews = get_request(endpoint)
+        print("*** get_dealer_reviews - reviews:", reviews)
         for review_detail in reviews:
             response = analyze_review_sentiments(review_detail['review'])
             print(response)
             review_detail['sentiment'] = response['sentiment']
-        return JsonResponse({"status":200, "review": reviews})
+            # review_detail['sentiment'] = {"sentiment": "neutral"}
+        return JsonResponse({"status":200, "reviews": reviews})
     else:
         return JsonResponse({"status":400, "message":"Bad Request"})
 
@@ -113,6 +116,11 @@ def get_dealer_details(request, dealer_id):
 
 # Create a `add_review` view to submit a review
 def add_review(request):
+    print("djangoapp /add_review starting...")
+    print("djangoapp /add_review request:", request)
+    print("djangoapp /add_review request.user.is_anonymous:", request.user.is_anonymous)
+    print("djangoapp /add_review reqrequest.bodyuest:", request.body)
+
     if(request.user.is_anonymous == False):
         data = json.loads(request.body)
         try:
