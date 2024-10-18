@@ -44,6 +44,9 @@ def analyze_review_sentiments(text):
 # def post_review(data_dict):
 def post_review(data_dict):
     request_url = backend_url+"/insert_review"
+    print("djangoapp - restapis /post_review start...");
+    print("djangoapp - restapis /post_review:", request_url);
+    print("djangoapp - restapis /post_review data_dict:", data_dict);
     try:
         response = requests.post(request_url,json=data_dict)
         print(response.json())

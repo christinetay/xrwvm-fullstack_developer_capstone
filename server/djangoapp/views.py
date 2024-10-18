@@ -116,11 +116,7 @@ def get_dealer_details(request, dealer_id):
 
 # Create a `add_review` view to submit a review
 def add_review(request):
-    print("djangoapp /add_review starting...")
-    print("djangoapp /add_review request:", request)
-    print("djangoapp /add_review request.user.is_anonymous:", request.user.is_anonymous)
-    print("djangoapp /add_review reqrequest.bodyuest:", request.body)
-
+    # make sure user is authenticated in Django or super user in Django
     if(request.user.is_anonymous == False):
         data = json.loads(request.body)
         try:
@@ -131,6 +127,7 @@ def add_review(request):
             return JsonResponse({"status":401,"message":"Error in posting review"})
     else:
         return JsonResponse({"status":403,"message":"Unauthorized"})
+    
 
 # Create a 'get_cars' view to get car details
 def get_cars(request):
