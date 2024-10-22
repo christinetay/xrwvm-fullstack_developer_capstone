@@ -93,11 +93,13 @@ DATABASES = {
     }
 }
 
-DPS = 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
+USER_SIMILAR_VALIDATION = 
+    'django.contrib.auth.password_validation.' \
+    'UserAttributeSimilarityValidator'
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME':
-        DPS,
+        USER_SIMILAR_VALIDATION,
     },
     {
         'NAME':
