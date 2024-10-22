@@ -28,7 +28,9 @@ SECRET_KEY =\
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # Fill in the WEB URL
-WEB_URL = ''
+WEB_URL = (
+    'https://leechoontay-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/'
+)
 
 ALLOWED_HOSTS = ['localhost', WEB_URL]
 CSRF_TRUSTED_ORIGINS = [WEB_URL]
