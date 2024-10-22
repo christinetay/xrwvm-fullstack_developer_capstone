@@ -29,7 +29,8 @@ SECRET_KEY =\
 DEBUG = True
 # Fill in the WEB URL
 WEB_URL = (
-    'https://leechoontay-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai/'
+    'https://leechoontay-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.'
+    'proxy.cognitiveclass.ai/'
 )
 
 ALLOWED_HOSTS = ['localhost', WEB_URL]
