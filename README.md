@@ -38,7 +38,7 @@ git config --global user.email "christinetay22@gmail.com" <br/>
 git config --global user.name "christinetay"
 
 # Create new branch(B) based on the previous branch(A)
-git checkout \-b <B> = [git branch + git checkout in local] <br/>
+git checkout `\-b` <B> = [git branch + git checkout in local] <br/>
 git merge <A> = [A data will merge into B in local] <br/>
 git push --set-upstream origin <B> = [B data will push to repository] <br/>
 OR  <br/>
