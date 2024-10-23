@@ -5,26 +5,24 @@ python3 manage.py createsuperuser <br/>
 python3 manage.py runserver 8002
 
 # Deploy sentiment analysis
-https://sentianalyzer.1nczfjaexwyc.us-south.codeengine.appdomain.cloud
-
-cd xrwvm-fullstack_developer_capstone/server/djangoapp/microservices
-
-docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
-docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer
+https://sentianalyzer.1nczfjaexwyc.us-south.codeengine.appdomain.cloud <br/>
+cd xrwvm-fullstack_developer_capstone/server/djangoapp/microservices <br/>
+docker build . -t us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer <br/>
+docker push us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer <br/>
 ibmcloud ce application create --name sentianalyzer --image us.icr.io/${SN_ICR_NAMESPACE}/senti_analyzer --registry-secret icr-secret --port 5000
 
 # Deploy Dockerfile 
-docker build -t us.icr.io/$MY_NAMESPACE/dealership .
-docker push us.icr.io/$MY_NAMESPACE/dealership
+docker build -t us.icr.io/$MY_NAMESPACE/dealership . <br/>
+docker push us.icr.io/$MY_NAMESPACE/dealership <br/>
 
 # MongoDB
-cd /home/project/xrwvm-fullstack_developer_capstone/server/database
-docker build . -t nodeapp
+cd /home/project/xrwvm-fullstack_developer_capstone/server/database <br/>
+docker build . -t nodeapp <br/>
 docker-compose up
 
 # Frontend rebuild
-cd /home/project/xrwvm-fullstack_developer_capstone/server/frontend
-npm install
+cd /home/project/xrwvm-fullstack_developer_capstone/server/frontend <br/>
+npm install <br/>
 npm run build
 
 
@@ -33,24 +31,24 @@ ibmcloud cr image-rm us.icr.io/sn-labs-leechoontay/dealership:latest && docker r
 
 
 # Git clone repository and set up
-git init
-export ORIGIN=https://github.com/christinetay/gkpbt-css-circle.git
-git clone https://github.com/christinetay/xrwvm-fullstack_developer_capstone.git
-git config --global user.email "christinetay22@gmail.com"
+git init <br/>
+export ORIGIN=https://github.com/christinetay/gkpbt-css-circle.git <br/>
+git clone https://github.com/christinetay/xrwvm-fullstack_developer_capstone.git <br/>
+git config --global user.email "christinetay22@gmail.com" <br/>
 git config --global user.name "christinetay"
 
 # Create new branch(B) based on the previous branch(A)
-git checkout -b <B> = [git branch + git checkout in local]
-git merge <A> = [A data will merge into B in local]
-git push --set-upstream origin <B> = [B data will push to repository]
-OR
-git push origin <A>:<B> = [From branch A to branch B in repository only]
+git checkout -b <B> = [git branch + git checkout in local] <br/>
+git merge <A> = [A data will merge into B in local] <br/>
+git push --set-upstream origin <B> = [B data will push to repository] <br/>
+OR  <br/>
+git push origin <A>:<B> = [From branch A to branch B in repository only] <br/>
 
 # push changes after created the branch and first commit
-git add .
-git commit -m "new changes"
-git push --set-upstream origin <B>
-git pull origin <b> --rebase
+git add . <br/>
+git commit -m "new changes" <br/>
+git push --set-upstream origin <B> <br/>
+git pull origin <b> --rebase <br/>
 
 # pull changes from repository to local
 git pull origin <B>
