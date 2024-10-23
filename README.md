@@ -2,7 +2,6 @@
 
 # Python
 python3 manage.py createsuperuser
-
 python3 manage.py runserver 8002
 
 # Deploy sentiment analysis
