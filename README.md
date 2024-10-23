@@ -47,7 +47,7 @@ git push origin \<test-A\>:\<test-B\> = [From branch test-A to branch test-B in 
 # push changes after created the branch and first commit
 git add . <br/>
 git commit -m "new changes" <br/>
-git push --set-upstream origin <B> <br/>
+git push --set-upstream origin \<test-B\>  <br/>
 git pull origin \<test-B\> --rebase <br/>
 
 # pull changes from repository to local
