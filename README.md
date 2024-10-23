@@ -38,20 +38,20 @@ git config --global user.email "christinetay22@gmail.com" <br/>
 git config --global user.name "christinetay"
 
 # Create new branch(test-B) based on the previous branch(test-A)
-git checkout -b <test-B> = [git branch + git checkout in local] <br/>
-git merge <test-A> = [test-A data will merge into test-B in local] <br/>
-git push --set-upstream origin <test-B> = [test-B data will push to repository] <br/>
+git checkout -b \<test-B\> = [git branch + git checkout in local] <br/>
+git merge \<test-A\> = [test-A data will merge into test-B in local] <br/>
+git push --set-upstream origin \<test-B\> = [test-B data will push to repository] <br/>
 OR  <br/>
-git push origin <test-A>:<test-B> = [From branch test-A to branch test-B in repository only] <br/>
+git push origin \<test-A\>:\<test-B\> = [From branch test-A to branch test-B in repository only] <br/>
 
 # push changes after created the branch and first commit
 git add . <br/>
 git commit -m "new changes" <br/>
 git push --set-upstream origin <B> <br/>
-git pull origin <test-B> --rebase <br/>
+git pull origin \<test-B\> --rebase <br/>
 
 # pull changes from repository to local
-git pull origin <test-B>
+git pull origin \<test-B\>
 
 # Python commands (in server folder)
 python3 manage.py runserver
