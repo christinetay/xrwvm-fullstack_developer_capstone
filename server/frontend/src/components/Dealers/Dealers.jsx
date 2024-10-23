@@ -70,6 +70,7 @@ return(
   <div>
       <Header/>
 
+      <a href={`/searchcars/${id}`}>SearchCars</a>	
      <table className='table'>
       <tr>
       <th>ID</th>
