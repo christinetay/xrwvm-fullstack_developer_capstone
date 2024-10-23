@@ -55,9 +55,9 @@ git pull origin <b> --rebase
 + pull changes from repository to local
 git pull origin <B>
 
--python commands (in server folder)
+- Python commands (in server folder)
 python3 manage.py runserver
 
--frontend command (in frontend folder)
-npm run build
+- Frontend command (in frontend folder)
+. npm run build
 
